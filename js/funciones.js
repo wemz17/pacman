@@ -130,12 +130,29 @@ function mover(press){
 function comprobarMapa(undo){
 	var teclado=undo;
 
-	var y=player.y/20;
-	var x=player.x/20;
+	var y=player.x/20;
+	var x=player.y/20;
 
   	console.log(x+","+y+"="+matriz[x][y]);
 
-	if ((teclado==movimiento.UP) && (matriz[x][y-1] == 1)){
+	if ((teclado==movimiento.UP) && (matriz[x-1][y] == 1)){
+		//console.log("Estado de la Casilla a mover: "+matriz[y][x+1]);
+		return true;
+	}
+	if ((teclado==movimiento.DOWN) && (matriz[x+1][y] == 1)){
+		return true;
+	}
+	if ((teclado==movimiento.LEFT) && (matriz[x][y-1] == 1)){
+		return true;
+	}
+	if ((teclado==movimiento.RIGHT) && (matriz[x][y+1] == 1)){
+		return true;
+	}
+ return false;
+}
+
+
+/*	if ((teclado==movimiento.UP) && (matriz[x][y-1] == 1)){
 		//console.log("Estado de la Casilla a mover: "+matriz[y][x+1]);
 		return true;
 	}
@@ -150,8 +167,7 @@ function comprobarMapa(undo){
 	}
  return false;
 }
-
-
+*/
 
 function confirmarFondo(){
 	fondo.fondoOK=true;
