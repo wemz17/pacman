@@ -48,6 +48,7 @@ var movimiento = {
 
 function inicio(){
 
+
 	var canvas = document.getElementById('cuadro');
 	lienzo = canvas.getContext('2d');
 
@@ -87,6 +88,7 @@ function inicio(){
 }
 
 function mover(press){
+	
 	var tecla = press.keyCode;
 	
 	var comprobar = comprobarMapa(tecla);
